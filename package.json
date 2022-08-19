@@ -1,0 +1,19 @@
+{
+  "name": "qr",
+  "version": "1.0.0",
+  "description": "QR codes should be simple. For some stupid reason, they're not.",
+  "main": "public/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/znci/qr.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/znci/qr/issues"
+  },
+  "homepage": "https://github.com/znci/qr#readme"
+}
