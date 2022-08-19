@@ -4,7 +4,9 @@
   "description": "QR codes should be simple. For some stupid reason, they're not.",
   "main": "public/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"Error: no build specified\" && exit 0",
+	"start": "node public/server.js"
+
   },
   "repository": {
     "type": "git",
