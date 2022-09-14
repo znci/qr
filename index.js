@@ -1,31 +1,37 @@
-// ye
+// Code rewritten by zNotChill
+const contents = 
+	[
+		`<button class="btn btn-primary" type="button" onClick="begin()">Begin</button>`,
+		`<h4>let's do this!</h4>waiting...`,
+		`<button type="button" onclick="stage2()">Next</button>`,
+		`<h4>almost there!</h4>Generating`,
+	];
+let cnum = 0;
+function updContent() {
+	document.getElementById("content").innerHTML = contents[cnum];
+}
+function pshContent() {
+	cnum += 1;
+	updContent();
+}
+
 url.style.visibility = 'hidden';
 content = document.getElementById("content")
 
-content.innerHTML = `<button class="btn btn-primary" type="button" onClick="begin()">Begin</button>`
+updContent()
 
 function begin() {
-	console.log('test')
-	content.innerHTML = `
-	<p class="h4-mktg">Let's do this!</p>
-	<p class="f3">Waiting<span class="AnimatedEllipsis"></span></p>
-	`
+	pshContent();
 	setTimeout(function() {
 		console.log('cooldown')
 		url.style.visibility = 'visible';
-		content.innerHTML = `
-
-		<button class="btn btn-outline" type="button" onclick="stage2()">Next</button>
-		`
-	  }, 1500);
+		pshContent();
+	}, 1500);
 }
 
-function stage2() {
+async function stage2() {
 	url.style.visibility = 'hidden';
-	content.innerHTML = `
-	<p class="h4-mktg">Almost there!</p>
-	<p class="f3">Generating<span class="AnimatedEllipsis"></span></p>
-	`
+	pshContent();
 	setTimeout(function() {
 		content.innerHTML = ``
 		var manurl = document.getElementById("url").value;
@@ -33,10 +39,15 @@ function stage2() {
 			text: `${manurl}`,
 			width: 256,
 			height: 256,
-			colorDark : "#000000",
-			colorLight : "#ffffff",
-			correctLevel : QRCode.CorrectLevel.H
+			colorDark : "#ffffff",
+			colorLight : "#1e1e1e",
+			correctLevel : 2
 		});
+		setTimeout(async () => {
+			const img = document.getElementById("content").querySelector("img")
+			// idk it doesnt work without the timeout
+			document.getElementById("content").innerHTML += `<a href="${img.src}" download=""><button type="button">Download</button></a>`
+			
+		}, 500);
 	})
-	
 }
