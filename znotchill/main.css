@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+html, body {
+	background-color: #1e1e1e;
+	color: #fff;
+	font-family: "Comfortaa";
+}
+section.main {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+section.main .tab {
+	position: relative;
+	left: 300px;
+	width: 300px;
+}
+section.main .contents {
+	margin-top: 75px;
+}
+.rainbow {
+	font-size: 5rem;
+	background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: rainbowshift 3s ease-in-out infinite;
+	background-size: 400% 100%;
+}
+@keyframes rainbowshift {
+	0%, 100% {
+		background-position: 0 0;
+	}
+	50% {
+		filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+		background-position: 100% 0;
+	}
+}
+
+button {
+	margin: 5px;
+	border-radius: 10px;
+	width: 100px;
+	outline: none;
+	background-color: transparent;
+	border: 3px #fff solid;
+	color: #fff;
+	font-family: "Comfortaa";
+	padding: 10px;
+}
+input {
+	margin: 5px;
+	border-radius: 10px;
+	width: 200px;
+	outline: none;
+	background-color: transparent;
+	border: 3px #fff solid;
+	color: #fff;
+	font-family: "Comfortaa";
+	padding: 10px;
+}
